@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+require 'faker'
 # Créer des utilisateurs
 10.times do
   User.create(
@@ -16,7 +16,7 @@
     encrypted_password: Faker::Internet.password
   )
 end
-
+puts "User succes"
 # Créer des articles
 10.times do
   Item.create!(
