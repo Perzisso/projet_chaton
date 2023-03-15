@@ -32,49 +32,51 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
               </li>
-              <ul>
-                <% if user_signed_in? %>
-                  <li>
-                    <%= link_to "Sign out", destroy_user_session_path, class:"btn btn-secondary", method: :delete %>
-                  </li>
-                <% else %>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Connexion</a>
-                    <div class="dropdown-menu">
-                      <%= link_to "SignUp", new_user_registration_path, class:"dropdown-item" %>
-                      <%# <a class="dropdown-item", link_to "new_user_registration">SignUp</a> %>
-                      <%# <a class="dropdown-item" href="#">LogIn</a>  %>
-                      <%= link_to "LogIn", new_user_session_path, class:"dropdown-item" %>
-                    </div>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <div class="container">
-        <div class="row">
-          <%= yield %>
-          <br>
-          <br>
-          <br>
-          <br>
-          <footer id="footer">
-            <div class="row">
-              <div class="text-center col-lg-12">
-                <ul class="list-unstyled">
-                  <li class="float-end"><a href="#top">Back to top</a></li>
-                </ul>
-                <br>
-                <hr class="hr" />
-                <p>Made by The Fantastiks 5</p>
-                <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/master/LICENSE%22%3EMIT" License></a>.</p>
-                <p>Based on <a href="https://getbootstrap.com/" rel="nofollow">Bootstrap</a>. Icons from <a href="https://icons.getbootstrap.com/" rel="nofollow">Bootstrap Icons</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
-                </div>
-              </div>
-            </footer>
+            </ul>
+            <ul class="navbar-nav float-end">
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to "Sign out", destroy_user_session_path, class:"btn btn-secondary", method: :delete %>
+                </li>
+              <% else %>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Connexion</a>
+                  <div class="dropdown-menu">
+                    <%= link_to "SignUp", new_user_registration_path, class:"dropdown-item" %>
+                    <%# <a class="dropdown-item", link_to "new_user_registration">SignUp</a> %>
+                    <%# <a class="dropdown-item" href="#">LogIn</a>  %>
+                    <%= link_to "LogIn", new_user_session_path, class:"dropdown-item" %>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
           </div>
         </div>
-      </body>
-    </html>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="row">
+      <%= yield %>
+      <br>
+      <br>
+      <br>
+      <br>
+      <footer id="footer">
+        <div class="row">
+          <div class="text-center col-lg-12">
+            <ul class="list-unstyled">
+              <li class="float-end"><a href="#top">Back to top</a></li>
+            </ul>
+            <br>
+            <hr class="hr" />
+            <p>Made by The Fantastiks 5</p>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/master/LICENSE%22%3EMIT" License></a>.</p>
+            <p>Based on <a href="https://getbootstrap.com/" rel="nofollow">Bootstrap</a>. Icons from <a href="https://icons.getbootstrap.com/" rel="nofollow">Bootstrap Icons</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
