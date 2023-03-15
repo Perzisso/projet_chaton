@@ -8,24 +8,25 @@
 require 'faker'
 # Créer des utilisateurs
 10.times do
-  User.create(
+  User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     street: Faker::Address.street_address,
     email: Faker::Internet.email,
-    encrypted_password: Faker::Internet.password
+    password: Faker::Internet.password
   )
 end
 puts "User succes"
 # Créer des articles
-10.times do
+20.times do
   Item.create!(
     name: Faker::Commerce.product_name,
     description: Faker::Lorem.paragraph(sentence_count: 2),
     price: Faker::Commerce.price(range: 0..100.0),
-    image_url: Faker::LoremPixel.image(size: "300x300")
+    image_url: "https://source.unsplash.com/300x300/?kitten"
   )
 end
+puts "Item succes"
 
 # Créer des paniers
 10.times do
@@ -34,7 +35,7 @@ end
     item_id: Item.all.sample.id
   )
 end
-
+puts "Cart succes"
 # Créer des commandes
 10.times do
   Order.create!(
@@ -43,3 +44,4 @@ end
     purchase_number: Faker::Alphanumeric.alpha(number: 10)
   )
 end
+puts "Order succes"
