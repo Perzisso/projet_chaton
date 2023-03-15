@@ -5,6 +5,8 @@ ruby "3.2.1"
 
 gem 'htmlbeautifier'
 
+gem 'dotenv-rails'
+
 gem 'letter_opener'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
