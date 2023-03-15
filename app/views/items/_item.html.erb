@@ -1,22 +1,21 @@
 <div id="<%= dom_id item %>">
   <p>
-    <strong>Price:</strong>
-    <%= item.price %>
+    <strong>Image url:</strong>
+    <%= image_tag(item.image_url) %>
   </p>
-
   <p>
     <strong>Name:</strong>
     <%= item.name %>
   </p>
-
+  <p>
+    <strong>Price:</strong>
+    <%= item.price %>
+  </p>
   <p>
     <strong>Description:</strong>
     <%= item.description %>
   </p>
-
   <p>
-    <strong>Image url:</strong>
-    <%= item.image_url %>
+    <%= link_to "Show this item", item_path(item) %>
   </p>
-
 </div>
