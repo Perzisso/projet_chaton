@@ -99,6 +99,7 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+
     erubi (1.12.0)
     faker (3.1.1)
       i18n (>= 1.8.11, < 2)
@@ -224,6 +225,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    stripe (8.3.0)
     thor (1.2.1)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -262,6 +264,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
+  dotenv (~> 2.8)
   dotenv-rails
   faker
   htmlbeautifier
@@ -275,6 +278,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  stripe (~> 8.3)
   turbo-rails
   tzinfo-data
   web-console
