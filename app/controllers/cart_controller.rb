@@ -4,50 +4,39 @@ class CartController < ApplicationController
   end
 
   def add
-    @item = Item.find_by(id: params[:id])
-    puts "***************"
-    puts "current params[:id]"
-    puts params[:id]
-    puts "******************"
-    puts "current params[:quantity]"
-    puts params[:quantity]
-    quantity = params[:quantity].to_i
-    puts "**************"
-    puts quantity
-    puts "*****************"
-    current_order = @cart.orders.find_by(item_id: @item.id)
-    puts @item.id
-    puts "current_order"
-    puts current_order
-    puts "*****************"
-    
-    if current_order && quantity > 0
-      current_order.update(quantity:)
-    elsif quantity <= 0
-      current_orderable.destroy
+    if user_signed_in?
+      quantity = params[:quantity].to_i
+      @item = Item.find_by(id: params[:id])
+      quantity.times do
+        Order.create!(item_id: @item.id, cart_id: @cart.id, user_id: current_user.id)
+      end
+      @orders = Order.where(cart_id: @cart.id)
+      puts "*********"
+      puts @orders
+      puts "*********"
     else
-      @cart.orders.create(item: @item, quantity:)
-    end
-
-    respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: [turbo_stream.replace('cart',
-                                                   partial: 'cart/cart',
-                                                   locals: { cart: @cart }),
-                              turbo_stream.replace(@product)]
-      end
+      redirect_to new_user_session_path
     end
   end
 
-  def remove
-    Order.find_by(id: params[:id]).destroy
-    respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.replace('cart',
-                                                  partial: 'cart/cart',
-                                                  locals: { cart: @cart })
+
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream: [turbo_stream.replace('cart',
+                                                     partial: 'cart/cart',
+                                                     locals: { cart: @cart }),
+                                turbo_stream.replace(@item)]
+        end
+      end
+
+    def remove
+      Order.find_by(id: params[:id]).destroy
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace('cart',
+                                                    partial: 'cart/cart',
+                                                    locals: { cart: @cart })
+        end
       end
     end
   end
-
-end
