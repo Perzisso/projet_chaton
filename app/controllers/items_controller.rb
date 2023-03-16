@@ -4,13 +4,7 @@ class ItemsController < ApplicationController
   # GET /items or /items.json
   def index
     @items = Item.all
-    puts session[:cart_id]
-    puts "*****"
-    puts session[:salut]
-    puts "*****"
-    puts session[:user_id]
-    puts "*****"
-    puts session[:michel]
+
   end
 
   # GET /items/1 or /items/1.json
