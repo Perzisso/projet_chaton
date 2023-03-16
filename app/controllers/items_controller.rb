@@ -22,6 +22,10 @@ class ItemsController < ApplicationController
   # POST /items or /items.json
   def create
     @item = Item.new(item_params)
+    puts "********"
+    puts params[:catimg]
+    @item.catimg.attach(params[:catiamge])
+    puts "*************"
 
     respond_to do |format|
       if @item.save
