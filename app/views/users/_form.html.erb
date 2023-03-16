@@ -1,3 +1,6 @@
+<div class="container container-table w-25">
+<div class="row vertical-center-row">
+    <div class="text-center col-md-12">
 <%= form_with(model: user) do |form| %>
   <% if user.errors.any? %>
     <div style="color: red">
@@ -12,31 +15,32 @@
   <% end %>
 
   <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+    <%= form.label :first_name, style: "display: block", class: "form-label mt-4" %>
+    <%= form.text_field :first_name, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
+    <%= form.label :last_name, style: "display: block", class: "form-label mt-4" %>
+    <%= form.text_field :last_name, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.label :email, style: "display: block", class: "form-label mt-4" %>
+    <%= form.text_field :email, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
+    <%= form.label :password, style: "display: block", class: "form-label mt-4" %>
+    <%= form.text_field :password, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :street, style: "display: block" %>
-    <%= form.text_field :street %>
+    <%= form.label :street, style: "display: block", class: "form-label mt-4" %>
+    <%= form.text_field :street, class: "form-control" %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
+</div>
