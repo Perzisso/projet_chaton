@@ -36,8 +36,8 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Connexion</a>
                   <div class="dropdown-menu">
-                    <%= button_to "SignUp", new_user_registration_path, class:"dropdown-item" %>
-                    <%= button_to "LogIn", new_user_session_path, class:"dropdown-item" %>
+                    <%= link_to "SignUp", new_user_registration_path, class:"dropdown-item" %>
+                    <%= link_to "LogIn", new_user_session_path, class:"dropdown-item" %>
                   </div>
                 </li>
               <% end %>
