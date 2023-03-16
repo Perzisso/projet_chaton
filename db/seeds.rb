@@ -41,7 +41,8 @@ puts "Cart succes"
     user_id: User.all.sample.id,
     item_id: Item.all.sample.id,
     cart_id: Cart.all.sample.id,
-    purchase_number: Faker::Alphanumeric.alpha(number: 10)
+    purchase_number: Faker::Alphanumeric.alpha(number: 10),
+    quantity: rand(1..3)
   )
 end
 puts "Order succes"

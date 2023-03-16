@@ -6,10 +6,13 @@ class CartController < ApplicationController
   def add
     if user_signed_in?
       quantity = params[:quantity].to_i
+      puts "*********"
+      puts quantity
+      puts "*********"
       @item = Item.find_by(id: params[:id])
-      quantity.times do
-        Order.create!(item_id: @item.id, cart_id: @cart.id, user_id: current_user.id)
-      end
+      puts @item
+      puts "***********"
+      puts Order.create!(item_id: @item.id, cart_id: @cart.id, user_id: current_user.id, quantity: quantity)
       @orders = Order.where(cart_id: @cart.id)
       puts "*********"
       puts @orders

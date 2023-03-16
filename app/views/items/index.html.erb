@@ -1,8 +1,10 @@
 <p style="color: green"><%= notice %></p>
+<%= turbo_frame_tag "cart" do %>
 <h1>Items</h1>
+<%= link_to "New item", new_item_path, class: "btn btn-primary" %>
 <div id="items">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <%= render partial: "item", layout: "shared/card_layout", collection: @items %>
   </div>
 </div>
-<%= link_to "New item", new_item_path %>
+<%end%>
