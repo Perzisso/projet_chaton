@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'avatars/create'
-  resources :items
+  resources :items do
+    resources :cat_img, only: [:create]
+  end
   devise_for :users
   resources :users do
     resources :avatars, only: [:create]
