@@ -5,15 +5,28 @@ class CartController < ApplicationController
 
   def add
     @item = Item.find_by(id: params[:id])
+    puts "***************"
+    puts "current params[:id]"
+    puts params[:id]
+    puts "******************"
+    puts "current params[:quantity]"
+    puts params[:quantity]
     quantity = params[:quantity].to_i
-    current_order = @cart.order.find_by(item_id: @item.id)
-
+    puts "**************"
+    puts quantity
+    puts "*****************"
+    current_order = @cart.orders.find_by(item_id: @item.id)
+    puts @item.id
+    puts "current_order"
+    puts current_order
+    puts "*****************"
+    
     if current_order && quantity > 0
       current_order.update(quantity:)
     elsif quantity <= 0
       current_orderable.destroy
     else
-      @cart.order.create(item: @item, quantity:)
+      @cart.orders.create(item: @item, quantity:)
     end
 
     respond_to do |format|

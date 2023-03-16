@@ -12,7 +12,10 @@ class ApplicationController < ActionController::Base
     end
 
     puts "*****"
+    puts "current session[:cart_id]"
     puts session[:cart_id]
+    puts "current @cart"
+    puts @cart
     puts "*****"
 
   end

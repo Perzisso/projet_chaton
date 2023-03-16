@@ -11,9 +11,9 @@
   </head>
   <body>
     <%= render 'layouts/navbar'%>
+     <%= render partial: "cart/cart" if @render_cart %>
     <div class="container">
       <%= yield %>
-      <br>
       <br>
       <br>
       <br>

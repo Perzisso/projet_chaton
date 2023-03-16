@@ -8,11 +8,17 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item d-flex justify-content-center">
         <h3><%= item.price%>€ </h3>
- </li>
+      </li>
     </ul>
     <div class="card-body d-flex justify-content-center">
       <%= link_to "Show this item", item_path(item), class: "btn btn-primary d-flex justify-content-center" %>
-      <%= link_to "Add to cart", item_path(item), class: "btn btn-secondary d-flex justify-content-center" %>
+    </div>
+    <div class="card-body d-flex justify-content-center">
+    <%= form_with(url: cart_add_path) do |f| %>
+      <%= f.hidden_field :id, value: item.id %>
+      <%= f.number_field :quantity, value: 0, min: 1, class: "form-control" %>
+      <%= f.submit "Add To Cart", class: "btn btn-secondary d-flex justify-content-center"  %>
+    <% end %>
     </div>
   </div>
 </div>
