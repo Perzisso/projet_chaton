@@ -20,6 +20,10 @@
           <%= f.label :password_confirmation, class: "form-label mt-4" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm new password" %>
         </div>
+         <div class="field">
+          <%= f.label :avatar, class: "form-label mt-4" %><br />
+          <%= f.file_field :avatar, class: "form-control" %>
+        </div>
         <br>
         <div class="actions">
           <%= f.submit "Sign up", class: "btn btn-primary" %>
