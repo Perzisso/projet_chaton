@@ -7,7 +7,8 @@ class User < ApplicationRecord
   validates :first_name, length: { minimum: 2 }
   validates :last_name, length: { minimum: 2 }
   validates :street, length: { minimum: 10 }
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true,
+                    format: { with: Devise.email_regexp }
 
   after_create :welcome_send
 
