@@ -1,27 +1,43 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>First name:</strong>
-    <%= user.first_name %>
-  </p>
-
-  <p>
-    <strong>Last name:</strong>
-    <%= user.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
-
-  <p>
-    <strong>Password:</strong>
-    <%= user.password %>
-  </p>
-
-  <p>
-    <strong>Street:</strong>
-    <%= user.street %>
-  </p>
-
+<div class="row g-3" id="<%= dom_id user %>">
+  <div class="col-md-2">
+    <fieldset disabled="">
+      <label class="form-label" for="disabledInput"><strong>First name</strong></label>
+      <input class="form-control" id="disabledInput" type="text" placeholder="<%= user.first_name %>" disabled="">
+    </fieldset>
+  </div>
+  <div class="col-md-2">
+    <fieldset disabled="">
+      <label class="form-label" for="disabledInput"><strong>Last name</strong></label>
+      <input class="form-control" id="disabledInput" type="text" placeholder="<%= user.last_name %>" disabled="">
+    </fieldset>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <fieldset disabled="">
+        <label class="form-label" for="disabledInput"><strong>Email</strong></label>
+        <input class="form-control" id="disabledInput" type="text" placeholder="<%= user.email %>" disabled="">
+      </fieldset>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <fieldset disabled="">
+        <label class="form-label" for="disabledInput"><strong>Password</strong></label>
+        <input class="form-control" id="disabledInput" type="text" placeholder="**********" disabled="">
+      </fieldset>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <fieldset disabled="">
+        <label class="form-label" for="disabledInput"><strong>Street</strong></label>
+        <input class="form-control" id="disabledInput" type="text" placeholder="<%= user.street %>" disabled="">
+      </fieldset>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <hr class="hr" />
+    </div>
+  </div>
 </div>
