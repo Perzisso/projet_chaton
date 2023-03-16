@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">N° de l'item</th>
+      <th scope="col">Nom de l'item</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart.orders.each do |order| %>
+      <tr>
+        <% item = order.item %>
+        <th scope="row"><%=item.id%></th>
+        <th scope="row"><%=item.name%></th>
+        <td><%= item.price %></td>
+        <td><%=order.quantity%></td>
+        <td>order.total</td>
+        <td>  <%= form_with(url: cart_remove_path) do |f| %>
+            <%= f.hidden_field :id, value: order.id %>
+            <%= f.submit "X", class: "btn btn-warning" %>
+          <% end %></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
