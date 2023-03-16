@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :items, through: :cart
   has_many :orders
   has_many :items, through: :order
+  has_one_attached :avatar
 
   validates :first_name, :last_name, :street, :email, :password, presence: true
   validates :first_name, length: { minimum: 2 }

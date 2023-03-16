@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :items
+  get 'avatars/create'
+  resources :items do
+    resources :cat_images, only: [:create]
+  end
+
   devise_for :users
-  resources :users
+  resources :users do
+    resources :avatars, only: [:create]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'
