@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :items, through: :cart
   has_many :orders
   has_many :items, through: :order
-  has_one  :avatar
+  has_one_attached :avatar
 
   after_create :welcome_send
 
