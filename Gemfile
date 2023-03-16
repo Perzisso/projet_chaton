@@ -78,3 +78,5 @@ end
 gem "rspec-rails", "~> 6.0"
 
 gem "devise", "~> 4.9"
+
+gem "dotenv", "~> 2.8"
