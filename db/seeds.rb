@@ -27,21 +27,3 @@ puts "User succes"
   )
 end
 puts "Item succes"
-
-# Créer des paniers
-10.times do
-  Cart.create!(
-    user_id: User.all.sample.id,
-    item_id: Item.all.sample.id
-  )
-end
-puts "Cart succes"
-# Créer des commandes
-10.times do
-  Order.create!(
-    user_id: User.all.sample.id,
-    item_id: Item.all.sample.id,
-    purchase_number: Faker::Alphanumeric.alpha(number: 10)
-  )
-end
-puts "Order succes"
