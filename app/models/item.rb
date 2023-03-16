@@ -3,6 +3,6 @@ class Item < ApplicationRecord
   has_many :users, through: :cart
   has_many :orders
   has_many :users, through: :order
-  has_one  :cat_img
+  has_one_attached :cat_img
 
 end
