@@ -2,7 +2,8 @@
 <h1>Cart</h1>
   <% if @cart.orders.count > 0 %>
     <%= render "cart/orders" %>
-    <p>Total: <%= @cart.total %></p>
+    <h3><strong>Total:</strong> <%= @total%>€</H3>
+    <%= button_to "Passer commande", checkout_create_path(total: 10), class: "btn btn-primary", "data-turbo" => "false" %>
   <% else %>
     <p>Your cart is empty</p>
   <% end %>

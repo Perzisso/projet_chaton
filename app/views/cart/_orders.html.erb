@@ -1,12 +1,12 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">N° de l'item</th>
-      <th scope="col">Nom de l'item</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Total</th>
-      <th scope="col">Delete</th>
+      <th scope="col"><h3>N° de l'item</h3></th>
+      <th scope="col"><h3>Nom de l'item</h3></th>
+      <th scope="col"><h3>Price</h3></th>
+      <th scope="col"><h3>Quantity</h3></th>
+      <th scope="col"><h3>Total</h3></th>
+      <th scope="col"><h3>Delete</h3></th>
     </tr>
   </thead>
   <tbody>
@@ -15,9 +15,9 @@
         <% item = order.item %>
         <th scope="row"><%=item.id%></th>
         <th scope="row"><%=item.name%></th>
-        <td><%= item.price %></td>
-        <td><%=order.quantity%></td>
-        <td>order.total</td>
+        <td><%= item.price %>€</td>
+        <td><%= order.quantity%></td>
+        <td><%= order.quantity * order.item.price %>€ </td>
         <td>  <%= form_with(url: cart_remove_path) do |f| %>
             <%= f.hidden_field :id, value: order.id %>
             <%= f.submit "X", class: "btn btn-warning" %>
