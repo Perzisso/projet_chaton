@@ -22,10 +22,6 @@ class ItemsController < ApplicationController
   # POST /items or /items.json
   def create
     @item = Item.new(item_params)
-    puts "********"
-    puts params[:catimg]
-    @item.catimg.attach(params[:catiamge])
-    puts "*************"
 
     respond_to do |format|
       if @item.save
@@ -69,6 +65,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:price, :name, :description, :image_url)
+      params.require(:item).permit(:price, :name, :description, :image_url, :catimage)
     end
 end
