@@ -4,6 +4,12 @@ class User < ApplicationRecord
   has_many :orders
   has_many :items, through: :order
 
+  validates :first_name, :last_name, :street, :email, :password, presence: true
+  validates :first_name, length: { minimum: 2 }
+  validates :last_name, length: { minimum: 2 }
+  validates :street, length: { minimum: 10 }
+  validates :email, uniqueness: true
+
   after_create :welcome_send
 
   # Include default devise modules. Others available are:
