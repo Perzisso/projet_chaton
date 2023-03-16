@@ -80,3 +80,5 @@ gem "rspec-rails", "~> 6.0"
 gem "devise", "~> 4.9"
 
 gem "dotenv", "~> 2.8"
+
+gem "stripe", "~> 8.3"
