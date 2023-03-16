@@ -1,0 +1,5 @@
+class AddIndexToOrder < ActiveRecord::Migration[7.0]
+  def change
+    add_reference :orders, :item, null: false, foreign_key: true
+  end
+end
