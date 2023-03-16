@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+root "items#index"
   get 'cart/show'
   devise_for :users
   resources :cart, only: [:show]

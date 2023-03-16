@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.0].define(version: 2023_03_16_171822) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,9 +84,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_171822) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "orders", "carts"
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "carts"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
 end
